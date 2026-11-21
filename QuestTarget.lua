@@ -6,7 +6,7 @@
 
 local ADDON_NAME = ...
 local MACRO_NAME = "QuestTarget"
-local MACRO_ICON = 134400 -- INV_Misc_QuestionMark
+local MACRO_ICON = 132212 -- Ability_Hunter_SniperShot: the crosshair Hunter's Mark uses
 local MAX_MACRO_LENGTH = 255
 local MENU_TEXT = "Set as |cFF39c0edmacro target|r"
 local CHAT_PREFIX = "|cFF39c0edQuestTarget|r: "
@@ -213,8 +213,9 @@ end)
 local function OnAddonLoaded()
     QuestTargetDB = QuestTargetDB or {}
     -- Questie fills in quest objectives some time after login, so the first refresh waits for it.
+    -- An existing macro is refreshed too, so it picks up icon changes from add-on updates.
     Questie.API.RegisterOnReady(function()
-        if QuestTargetDB.questId then
+        if QuestTargetDB.questId or GetMacroIndexByName(MACRO_NAME) > 0 then
             RefreshMacro()
         end
     end)

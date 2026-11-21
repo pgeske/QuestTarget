@@ -2,7 +2,7 @@
 ## Title: QuestTarget
 ## Notes: Right-click a quest or objective in Questie's tracker to point one macro at the mobs and NPCs it needs.
 ## Author: pgeske
-## Version: 1.0.0
+## Version: 1.1.0
 ## Dependencies: Questie
 ## SavedVariablesPerCharacter: QuestTargetDB
 
